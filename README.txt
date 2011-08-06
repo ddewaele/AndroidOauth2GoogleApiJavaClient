@@ -55,7 +55,7 @@ https://www.googleapis.com/auth/latitude.all.best	Access to best-available curre
 
 The generated URL that looks like this:
 
-https://accounts.google.com/o/oauth2/auth?client_id=1021231231376.apps.googleusercontent.com&redirect_uri=http://localhost:51871/Callback&response_type=code&scope=https://www.googleapis.com/auth/latitude.all.best
+https://accounts.google.com/o/oauth2/auth?client_id=1021231231376.apps.googleusercontent.com&redirect_uri=http://localhost&response_type=code&scope=https://www.googleapis.com/auth/latitude.all.best
 
 page looks like this : .... blabla
 
