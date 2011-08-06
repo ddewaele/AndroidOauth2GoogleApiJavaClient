@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/api/client/google-api-client/1.4.1-beta/google-api-client-1.4.1-beta.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/api/client/google-api-client-googleapis/1.4.1-beta/google-api-client-googleapis-1.4.1-beta.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-codec/commons-codec/1.3/commons-codec-1.3.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpclient/4.0.3/httpclient-4.0.3.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/codehaus/jackson/jackson-core-asl/1.6.7/jackson-core-asl-1.6.7.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/guava/guava/r09/guava-r09.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/code/gson/gson/1.6/gson-1.6.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/api/services/latitude/google-api-services-latitude-v1/1.1.0-beta/google-api-services-latitude-v1-1.1.0-beta.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
