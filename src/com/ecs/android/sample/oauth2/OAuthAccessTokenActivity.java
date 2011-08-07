@@ -81,6 +81,7 @@ public class OAuthAccessTokenActivity extends Activity {
 				  		      view.setVisibility(View.INVISIBLE);
 				  		      startActivity(new Intent(OAuthAccessTokenActivity.this,LatitudeApiSample.class));
             			} else if (url.indexOf("error=")!=-1) {
+            				view.setVisibility(View.INVISIBLE);
             				new SharedPreferencesCredentialStore(prefs).clearCredentials();
             				startActivity(new Intent(OAuthAccessTokenActivity.this,LatitudeApiSample.class));
             			}
