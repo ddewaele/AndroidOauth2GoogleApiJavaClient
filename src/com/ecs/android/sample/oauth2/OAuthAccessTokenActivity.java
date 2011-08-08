@@ -50,7 +50,7 @@ public class OAuthAccessTokenActivity extends Activity {
         webview.setVisibility(View.VISIBLE);
         setContentView(webview);
         String authorizationUrl = new GoogleAuthorizationRequestUrl(OAuth2ClientCredentials.CLIENT_ID, OAuth2ClientCredentials.REDIRECT_URI, OAuth2ClientCredentials.SCOPE).build();
-
+        
         
         /* WebViewClient must be set BEFORE calling loadUrl! */  
         webview.setWebViewClient(new WebViewClient() {  
@@ -67,7 +67,7 @@ public class OAuthAccessTokenActivity extends Activity {
 						
             			if (url.indexOf("code=")!=-1) {
             			
-	            			String code = url.substring(OAuth2ClientCredentials.REDIRECT_URI.length()+7,url.length());
+	            			String code = extractCodeFromUrl(url);
 							
 				  		      AccessTokenResponse accessTokenResponse = new GoogleAuthorizationCodeGrant(new NetHttpTransport(),
 										      new JacksonFactory(),
@@ -93,7 +93,10 @@ public class OAuthAccessTokenActivity extends Activity {
             	}
                 System.out.println("onPageFinished : " + url);
   		      
-            }  
+            }
+			private String extractCodeFromUrl(String url) {
+				return url.substring(OAuth2ClientCredentials.REDIRECT_URI.length()+7,url.length());
+			}  
         });  
         
         webview.loadUrl(authorizationUrl);		
