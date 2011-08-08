@@ -93,14 +93,21 @@ public class LatitudeApiSample extends Activity {
 		    latitude.apiKey=OAuth2ClientCredentials.API_KEY;
 		    
 			LatitudeCurrentlocationResourceJson currentLocation = latitude.currentLocation.get().execute();
-			String timestampMs = (String) currentLocation.get("timestampMs");
-			DateFormat df= new  SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
-			Date d = new Date(Long.valueOf(timestampMs));
-			textView.setText("Current location : " + currentLocation.get("latitude") + " - " + currentLocation.get("longitude") + " at " + df.format(d));
+			String locationAsString = convertLocationToString(currentLocation);
+			textView.setText(locationAsString);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			textView.setText("Error occured : " + ex.getMessage());
 		}
+	}
+
+	private String convertLocationToString(
+			LatitudeCurrentlocationResourceJson currentLocation) {
+		String timestampMs = (String) currentLocation.get("timestampMs");
+		DateFormat df= new  SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+		Date d = new Date(Long.valueOf(timestampMs));
+		String locationAsString = "Current location : " + currentLocation.get("latitude") + " - " + currentLocation.get("longitude") + " at " + df.format(d);
+		return locationAsString;
 	}
 	
 }
