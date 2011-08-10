@@ -3,7 +3,9 @@ Blog post for this article can be found here : http://blog.doityourselfandroid.c
 In order to run the sample, make sure you do the necessary preperations in the Google API console, 
 and provide your OAuth 2.0 details in https://github.com/ddewaele/AndroidOauth2GoogleApiJavaClient/blob/master/src/com/ecs/android/sample/oauth2/OAuth2ClientCredentials.java
 
-Following dependencies are required in order to run the application :
+I've updated the sample to inclue the libraries in Git. You should be able to checkout / build / run without worrying about dependencies.
+
+For the sake of clarity, following dependencies are required in order to run the application :
 
 M2_REPO/commons-codec/commons-codec/1.3/commons-codec-1.3.jar
 M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
