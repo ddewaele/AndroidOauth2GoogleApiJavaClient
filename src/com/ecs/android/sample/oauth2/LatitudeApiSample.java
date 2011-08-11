@@ -90,7 +90,7 @@ public class LatitudeApiSample extends Activity {
 			        accessTokenResponse.refreshToken);
 			
 		    final Latitude latitude = new Latitude(transport, accessProtectedResource, jsonFactory);
-		    latitude.apiKey=OAuth2ClientCredentials.API_KEY;
+		    latitude.setKey(OAuth2ClientCredentials.API_KEY);
 		    
 			LatitudeCurrentlocationResourceJson currentLocation = latitude.currentLocation.get().execute();
 			String locationAsString = convertLocationToString(currentLocation);
