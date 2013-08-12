@@ -287,6 +287,16 @@ Full-Width Styles
   border-bottom-right-radius: 2px;
 }
 
+#followme_banner {
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  z-index: 10;
+  padding: 10px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
 #header_wrap {
   background: #212121;
   background: -moz-linear-gradient(top, #373737, #212121);
@@ -318,12 +328,11 @@ Full-Width Styles
 
 #downloads {
   position: absolute;
-  width: 210px;
+  width: 640px;
   z-index: 10;
   bottom: -40px;
   right: 0;
   height: 70px;
-  background: url('../images/icon_download.png') no-repeat 0% 90%;
 }
 
 .zip_download_link {

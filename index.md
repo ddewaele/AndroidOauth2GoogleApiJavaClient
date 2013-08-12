@@ -16,9 +16,10 @@ The sample application allows you to access data from the following OAuth2 provi
 ##Legacy github repo / blog post
 
 This repository has recently been updated to use a new version of the Google OAuth libraries, and now also includes the Foursquare flow.
+
 The original blog post for the original github repository can be found [here](http://blog.doityourselfandroid.com/2011/08/06/oauth-2-0-flow-android/).
-Note that some of the code samples in the article are now out-of-date due to the new version of the Google OAuth library.
-I'll write up a new blog post as soon as I can find the time.
+
+Note that some of the code samples in the article are now out-of-date due to the new version of the Google OAuth library. I'll write up a new blog post as soon as I can find the time.
 
 ##Google projects for doing OAuth2
 
@@ -97,7 +98,8 @@ When returning to the application, an API call will be executed on a protected r
 
 ![clientID and secret provided](https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/4_api_call.png)
 
-When returning to the intro screen, the application shows the ```access_token``` and the time in seconds before it expires. Note that the Google OAuth library handles expired tokens transparently.
+When returning to the intro screen, the application shows the ```access_token``` and the time in seconds before it expires. 
+Note that the Google OAuth library handles expired tokens transparently.
 So when clicking on the API button with an expired token, the API will automatically refresh the token in the background before executing the API call.  
 
 ![clientID and secret provided](https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/5_accesstoken.png)
