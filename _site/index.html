@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Androidoauth2googleapijavaclient</title>
+    <title>Android OAuth2 using Google OAuth Client Library for Java</title>
   </head>
 
   <body>
@@ -18,8 +18,8 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/ddewaele/AndroidOauth2GoogleApiJavaClient">View on GitHub</a>
 
-          <h1 id="project_title">Androidoauth2googleapijavaclient</h1>
-          <h2 id="project_tagline">The goal of this sample project is to show you how you can do OAuth2 from an Android application using the Google OAuth Client Library for Java.</h2>
+          <h1 id="project_title">Android OAuth2</h1>
+          <h2 id="project_tagline">using Google OAuth Client Library for Java.</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/ddewaele/AndroidOauth2GoogleApiJavaClient/zipball/master">Download this project as a .zip file</a>
@@ -47,7 +47,7 @@
 
 <h2 id='legacy_github_repo__blog_post'>Legacy github repo / blog post</h2>
 
-<p>This repository has recently been updated to use a new version of the Google OAuth libraries, and now also includes the Foursquare flow. The original blog post for the original github repository can be found here : http://blog.doityourselfandroid.com/2011/08/06/oauth-2-0-flow-android/ Note that some of the code samples in the article are now out-of-date due to the new version of the Google OAuth library. I&#8217;ll write up a new blog post as soon as I can find the time.</p>
+<p>This repository has recently been updated to use a new version of the Google OAuth libraries, and now also includes the Foursquare flow. The original blog post for the original github repository can be found <a href='http://blog.doityourselfandroid.com/2011/08/06/oauth-2-0-flow-android/'>here</a>. Note that some of the code samples in the article are now out-of-date due to the new version of the Google OAuth library. I&#8217;ll write up a new blog post as soon as I can find the time.</p>
 
 <h2 id='google_projects_for_doing_oauth2'>Google projects for doing OAuth2</h2>
 
@@ -101,7 +101,7 @@
 
 <p>The OAuth2 connection params are defined in the <code>com.ecs.android.sample.oauth2.OAuth2Params</code> class.</p>
 
-<pre><code>GOOGLE_PLUS(&quot;&quot;,&quot;pfyxvEJ8ascqG0pYJKElF39H&quot;,&quot;https://accounts.google.com/o/oauth2/token&quot;,&quot;https://accounts.google.com/o/oauth2/auth&quot;,BearerToken.authorizationHeaderAccessMethod(),PlusScopes.PLUS_ME,&quot;http://localhost&quot;,&quot;plus&quot;,&quot;https://www.googleapis.com/plus/v1/people/me/activities/public&quot;),
+<pre><code>GOOGLE_PLUS(&quot;&quot;,&quot;&quot;,&quot;https://accounts.google.com/o/oauth2/token&quot;,&quot;https://accounts.google.com/o/oauth2/auth&quot;,BearerToken.authorizationHeaderAccessMethod(),PlusScopes.PLUS_ME,&quot;http://localhost&quot;,&quot;plus&quot;,&quot;https://www.googleapis.com/plus/v1/people/me/activities/public&quot;),
 GOOGLE_TASKS_OAUTH2(&quot;&quot;,&quot;&quot;,&quot;https://accounts.google.com/o/oauth2/token&quot;,&quot;https://accounts.google.com/o/oauth2/auth&quot;,BearerToken.authorizationHeaderAccessMethod(),&quot;https://www.googleapis.com/auth/tasks&quot;,&quot;http://localhost&quot;,&quot;tasks&quot;,&quot;https://www.googleapis.com/tasks/v1/users/@me/lists&quot;),
 FOURSQUARE_OAUTH2(&quot;&quot;,&quot;&quot;,&quot;https://foursquare.com/oauth2/access_token&quot;, &quot;https://foursquare.com/oauth2/authenticate&quot;,FoursquareQueryParameterAccessMethod.getInstance(),&quot;&quot;,&quot;http://localhost&quot;,&quot;foursquare&quot;,&quot;https://api.foursquare.com/v2/users/self/checkins&quot;); </code></pre>
 
@@ -109,11 +109,11 @@ FOURSQUARE_OAUTH2(&quot;&quot;,&quot;&quot;,&quot;https://foursquare.com/oauth2/
 
 <p>If you don&#8217;t provide the clientId and clientSecret you&#8217;ll see the following message on your screen.</p>
 
-<p><img src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/10_noclientidandsecret.png' alt='No clientID and secret provided' /></p>
+<p><img alt='No clientID and secret provided' src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/10_noclientidandsecret.png' /></p>
 
 <p>If you have provided a clientId and clientSecret then you should see this</p>
 
-<p><img src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/1_intro_screen.png' alt='clientID and secret provided' /></p>
+<p><img alt='clientID and secret provided' src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/1_intro_screen.png' /></p>
 
 <p>Notice how for each OAuth2 provider we have 3 buttons</p>
 
@@ -127,27 +127,27 @@ FOURSQUARE_OAUTH2(&quot;&quot;,&quot;&quot;,&quot;https://foursquare.com/oauth2/
 
 <p>When you start an OAuth2 flow (ex: the Google flows), you&#8217;ll be invited to login with your Google account</p>
 
-<p><img src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/2_google_login.png' alt='clientID and secret provided' /></p>
+<p><img alt='clientID and secret provided' src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/2_google_login.png' /></p>
 
 <p>Google will then prompt you to provide access to your application to access the users data.</p>
 
-<p><img src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/3_google_authorization.png' alt='clientID and secret provided' /></p>
+<p><img alt='clientID and secret provided' src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/3_google_authorization.png' /></p>
 
 <p>When returning to the application, an API call will be executed on a protected resource from that OAuth2 service provided. The RAW JSON is simply dumped on the screen.</p>
 
-<p><img src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/4_api_call.png' alt='clientID and secret provided' /></p>
+<p><img alt='clientID and secret provided' src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/4_api_call.png' /></p>
 
 <p>When returning to the intro screen, the application shows the <code>access_token</code> and the time in seconds before it expires. Note that the Google OAuth library handles expired tokens transparently. So when clicking on the API button with an expired token, the API will automatically refresh the token in the background before executing the API call.</p>
 
-<p><img src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/5_accesstoken.png' alt='clientID and secret provided' /></p>
+<p><img alt='clientID and secret provided' src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/5_accesstoken.png' /></p>
 
 <p>The same is applicable for non-Google OAuth2 service providers like Foursquare. You also need to login and you also need to authorize the application to access your data.</p>
 
-<p><img src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/6_foursquare.png' alt='clientID and secret provided' /> <img src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/7_foursquare_login.png' alt='clientID and secret provided' /></p>
+<p><img alt='clientID and secret provided' src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/6_foursquare.png' /> <img alt='clientID and secret provided' src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/7_foursquare_login.png' /></p>
 
 <p>Note how Foursquare doesn&#8217;t issue a refresh token, but rather a non-expiring access token.</p>
 
-<p><img src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/9_accesstoken2.png' alt='clientID and secret provided' /></p>
+<p><img alt='clientID and secret provided' src='https://dl.dropboxusercontent.com/u/13246619/Blog%20Articles/OAuth2Demo/9_accesstoken2.png' /></p>
 
 <h2 id='project_dependences'>Project dependences</h2>
 
@@ -190,6 +190,23 @@ FOURSQUARE_OAUTH2(&quot;&quot;,&quot;&quot;,&quot;https://foursquare.com/oauth2/
 
 <li><a href='https://developers.google.com/oauthplayground'>OAuth2 Playground</a></li>
 </ul>
+  <hr/>
+      <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'androidoauth2googleapijavaclient'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
       </section>
     </div>
 

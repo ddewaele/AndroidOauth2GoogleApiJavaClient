@@ -16,7 +16,7 @@ The sample application allows you to access data from the following OAuth2 provi
 ##Legacy github repo / blog post
 
 This repository has recently been updated to use a new version of the Google OAuth libraries, and now also includes the Foursquare flow.
-The original blog post for the original github repository can be found here : http://blog.doityourselfandroid.com/2011/08/06/oauth-2-0-flow-android/
+The original blog post for the original github repository can be found [here](http://blog.doityourselfandroid.com/2011/08/06/oauth-2-0-flow-android/).
 Note that some of the code samples in the article are now out-of-date due to the new version of the Google OAuth library.
 I'll write up a new blog post as soon as I can find the time.
 
