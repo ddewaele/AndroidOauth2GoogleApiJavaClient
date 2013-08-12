@@ -7,6 +7,8 @@ title: Document Center
 
 The goal of this sample project is to show you how you can do OAuth2 from an Android application using the [Google OAuth Client Library for Java](https://code.google.com/p/google-oauth-java-client/).
 
+For a sample application using Twitter (an OAuth1 Service Provider, checkout [this page](http://ddewaele.github.io/AndroidTwitterGoogleApiJavaClient).
+
 The sample application allows you to access data from the following OAuth2 providers
 
 - Foursquare (using the Google OAuth Client Library for Java to access a non-Google API).
