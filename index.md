@@ -65,7 +65,7 @@ More instructions can be found on the [m2e-android plugin](http://rgladwell.gith
 
 The OAuth2 connection params are defined in the ```com.ecs.android.sample.oauth2.OAuth2Params``` class.
 
-	GOOGLE_PLUS("","pfyxvEJ8ascqG0pYJKElF39H","https://accounts.google.com/o/oauth2/token","https://accounts.google.com/o/oauth2/auth",BearerToken.authorizationHeaderAccessMethod(),PlusScopes.PLUS_ME,"http://localhost","plus","https://www.googleapis.com/plus/v1/people/me/activities/public"),
+	GOOGLE_PLUS("","","https://accounts.google.com/o/oauth2/token","https://accounts.google.com/o/oauth2/auth",BearerToken.authorizationHeaderAccessMethod(),PlusScopes.PLUS_ME,"http://localhost","plus","https://www.googleapis.com/plus/v1/people/me/activities/public"),
 	GOOGLE_TASKS_OAUTH2("","","https://accounts.google.com/o/oauth2/token","https://accounts.google.com/o/oauth2/auth",BearerToken.authorizationHeaderAccessMethod(),"https://www.googleapis.com/auth/tasks","http://localhost","tasks","https://www.googleapis.com/tasks/v1/users/@me/lists"),
 	FOURSQUARE_OAUTH2("","","https://foursquare.com/oauth2/access_token", "https://foursquare.com/oauth2/authenticate",FoursquareQueryParameterAccessMethod.getInstance(),"","http://localhost","foursquare","https://api.foursquare.com/v2/users/self/checkins"); 
 
