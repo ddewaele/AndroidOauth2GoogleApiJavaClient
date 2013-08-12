@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ecs</groupId>
+	<artifactId>com.ecs.android.sample.oauth2</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>apk</packaging>
+	<name>com.ecs.android.sample.oauth2</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<platform.version> 4.1.1.4</platform.version>
+		<android.plugin.version>3.6.0</android.plugin.version>
+		<project.http.version>1.15.0-rc</project.http.version>
+    	<project.oauth.version>1.15.0-rc</project.oauth.version>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>android</artifactId>
+			<version>${platform.version}</version>
+			<scope>provided</scope>
+			<exclusions>
+		      	<exclusion>
+		      		<groupId>xpp3</groupId>
+		      		<artifactId>xpp3</artifactId>
+		      	</exclusion>
+			</exclusions>
+		</dependency>
+		    <dependency>
+      <groupId>com.google.apis</groupId>
+      <artifactId>google-api-services-plus</artifactId>
+      <version>v1-rev72-1.15.0-rc</version>
+    </dependency>
+		
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client-jackson2</artifactId>
+      <version>${project.http.version}</version>
+      <exclusions>
+      	<exclusion>
+      		<groupId>xpp3</groupId>
+      		<artifactId>xpp3</artifactId>
+      	</exclusion>
+      </exclusions>
+    </dependency>
+    
+  </dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+					<artifactId>android-maven-plugin</artifactId>
+					<version>${android.plugin.version}</version>
+					<extensions>true</extensions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+				<artifactId>android-maven-plugin</artifactId>
+				<configuration>
+					<sdk>
+						<platform>17</platform>
+					</sdk>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

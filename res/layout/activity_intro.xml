@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    
+    
+	<TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/oauth_googleplus"
+                android:textSize="20sp"
+                android:textStyle="bold"
+			    android:typeface="normal"/>	
+			    
+    <LinearLayout
+	    android:orientation="horizontal"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    >
+    
+	    <Button android:id="@+id/btn_oauth_googleplus"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/oauth"/>
+	    
+	    <Button android:id="@+id/btn_api_googleplus"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/api_call"/>
+	    
+	    <Button android:id="@+id/btn_clear_googleplus"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/clear_credentials"/>
+	  
+	</LinearLayout>
+	    
+	    <TextView android:id="@+id/txt_oauth_googleplus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+			    android:typeface="normal"/>	    
+	
+	    	<TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/oauth_googletasks"
+                android:textSize="20sp"
+                android:textStyle="bold"
+			    android:typeface="normal"/>	
+			    
+	<LinearLayout
+	    android:orientation="horizontal"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    >
+	    
+	    <Button android:id="@+id/btn_oauth_googletasks"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/oauth"/>	 
+	            
+	   	<Button android:id="@+id/btn_api_googletasks"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/api_call"/>
+	    
+	    <Button android:id="@+id/btn_clear_googletasks"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/clear_credentials"/>
+
+	</LinearLayout>
+	    
+	    <TextView android:id="@+id/txt_oauth_googletasks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+			    android:typeface="normal"/>	    
+	    
+	    	<TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/oauth_foursquare"
+                android:textSize="20sp"
+                android:textStyle="bold"
+			    android:typeface="normal"/>	
+			    	
+	<LinearLayout
+	    android:orientation="horizontal"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    >
+	    	    
+	    <Button android:id="@+id/btn_oauth_foursquare"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/oauth"/>
+	    
+	   	<Button android:id="@+id/btn_api_foursquare"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/api_call"/>
+	    
+	    <Button android:id="@+id/btn_clear_foursquare"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/clear_credentials"/>
+	    
+	 </LinearLayout>	    
+	    <TextView android:id="@+id/txt_oauth_foursquare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+			    android:typeface="normal"/>	    
+	    
+	    
+</LinearLayout>

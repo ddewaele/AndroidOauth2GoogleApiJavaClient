@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, AndroidOauth2GoogleApiJavaClientActivity!</string>
-    <string name="app_name">AndroidOauth2GoogleApiJavaClient</string>
+
+    <string name="app_name">OAuth2 Demos</string>
+    <string name="waiting_for_data">Waiting for data....</string>
+    <string name="launch_oauth_flow">Launch OAuth Flow</string>
+    <string name="clear_credentials">Clear Credentials</string>
+    <string name="oauth_googleplus">Google Plus OAuth2</string>
+    <string name="oauth_googletasks">Google Tasks OAuth2</string>
+    <string name="oauth_foursquare">Foursquare Oauth2</string>
+    <string name="oauth">Oauth2</string>
+    <string name="api_call">API</string>
+
 </resources>
