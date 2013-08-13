@@ -43,19 +43,15 @@ public class OAuthAccessTokenActivity extends Activity {
         
         handled=false;
         
-        Log.i(Constants.TAG, "handled = " + handled);
-        
-        
-        /* WebViewClient must be set BEFORE calling loadUrl! */  
         webview.setWebViewClient(new WebViewClient() {  
 
         	@Override  
             public void onPageStarted(WebView view, String url,Bitmap bitmap)  {  
-        		Log.i(Constants.TAG, "onPageStarted : " + url + " handled = " + handled);
+        		Log.d(Constants.TAG, "onPageStarted : " + url + " handled = " + handled);
             }
         	@Override  
             public void onPageFinished(final WebView view, final String url)  {
-        		Log.i(Constants.TAG, "onPageFinished : " + url + " handled = " + handled);
+        		Log.d(Constants.TAG, "onPageFinished : " + url + " handled = " + handled);
         		
         		if (url.startsWith(Constants.OAUTH2PARAMS.getRederictUri())) {
 	        		webview.setVisibility(View.INVISIBLE);
@@ -101,8 +97,9 @@ public class OAuthAccessTokenActivity extends Activity {
 		@Override
 		protected Void doInBackground(Uri...params) {
 
-			Log.i(Constants.TAG, "doInbackground called with url " + url);
+			
 			if (url.startsWith(Constants.OAUTH2PARAMS.getRederictUri())) {
+				Log.i(Constants.TAG, "Redirect URL found" + url);
 				handled=true;
         		try {
         			if (url.indexOf("code=")!=-1) {
@@ -111,8 +108,8 @@ public class OAuthAccessTokenActivity extends Activity {
             			Log.i(Constants.TAG, "Found code = " + authorizationCode);
 						
             			oAuth2Helper.retrieveAndStoreAccessToken(authorizationCode);
-			  		      startActivity=true;
-			  		      hasLoggedIn=true;
+            			startActivity=true;
+			  		    hasLoggedIn=true;
 
         			} else if (url.indexOf("error=")!=-1) {
         				startActivity=true;

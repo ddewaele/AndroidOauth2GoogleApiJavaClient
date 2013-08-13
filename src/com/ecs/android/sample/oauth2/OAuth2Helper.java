@@ -1,7 +1,6 @@
 package com.ecs.android.sample.oauth2;
 
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -15,14 +14,11 @@ import com.google.api.client.auth.oauth2.ClientParametersAuthentication;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.auth.oauth2.CredentialStore;
 import com.google.api.client.auth.oauth2.TokenResponse;
-import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
-import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.api.services.plus.PlusScopes;
 
 public class OAuth2Helper {
 
@@ -73,6 +69,9 @@ public class OAuth2Helper {
 		Log.i(Constants.TAG, "Refresh Token : " + tokenResponse.getRefreshToken());
 		flow.createAndStoreCredential(tokenResponse, oauth2Params.getUserId());
 	}
+	
+	
+	
 	
 	public String executeApiCall() throws IOException {
 		Log.i(Constants.TAG,"Executing API call at url " + this.oauth2Params.getApiUrl());

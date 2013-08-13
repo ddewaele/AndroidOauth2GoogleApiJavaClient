@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -57,8 +58,7 @@ public class IntroScreen extends Activity {
 		btnOAuthGooglePlus.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				Constants.OAUTH2PARAMS = Oauth2Params.GOOGLE_PLUS;
-				startActivity(new Intent().setClass(v.getContext(),OAuthAccessTokenActivity.class));
+				startOauthFlow(Oauth2Params.GOOGLE_PLUS);
 			}
 		});
 		
@@ -73,8 +73,7 @@ public class IntroScreen extends Activity {
 		btnApiGooglePlus.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				Constants.OAUTH2PARAMS = Oauth2Params.GOOGLE_PLUS;
-				startActivity(new Intent().setClass(v.getContext(),MainScreen.class));
+				startMainScreen(Oauth2Params.GOOGLE_PLUS);
 			}
 
 		});		
@@ -82,8 +81,7 @@ public class IntroScreen extends Activity {
 		btnOAuthGoogleTasks.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				Constants.OAUTH2PARAMS = Oauth2Params.GOOGLE_TASKS_OAUTH2;
-				startActivity(new Intent().setClass(v.getContext(),OAuthAccessTokenActivity.class));
+				startOauthFlow(Oauth2Params.GOOGLE_TASKS_OAUTH2);
 			}
 		});
 		
@@ -99,8 +97,7 @@ public class IntroScreen extends Activity {
 		btnApiGoogleTasks.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				Constants.OAUTH2PARAMS = Oauth2Params.GOOGLE_TASKS_OAUTH2;
-				startActivity(new Intent().setClass(v.getContext(),MainScreen.class));
+				startMainScreen(Oauth2Params.GOOGLE_TASKS_OAUTH2);
 			}
 
 		});			
@@ -108,8 +105,7 @@ public class IntroScreen extends Activity {
 		btnOAuthFoursquare.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				Constants.OAUTH2PARAMS = Oauth2Params.FOURSQUARE_OAUTH2;
-				startActivity(new Intent().setClass(v.getContext(),OAuthAccessTokenActivity.class));
+				startOauthFlow(Oauth2Params.FOURSQUARE_OAUTH2);
 			}
 		});
 		
@@ -124,14 +120,47 @@ public class IntroScreen extends Activity {
 		btnApiFoursquare.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				Constants.OAUTH2PARAMS = Oauth2Params.FOURSQUARE_OAUTH2;
-				startActivity(new Intent().setClass(v.getContext(),MainScreen.class));
+				startMainScreen(Oauth2Params.FOURSQUARE_OAUTH2);
 			}
 
 		});			
 		
 		
 	}
+
+	/**
+	 * Starts the main screen where we show the API results.
+	 * 
+	 * @param oauth2Params
+	 */
+	private void startMainScreen(Oauth2Params oauth2Params) {
+		Constants.OAUTH2PARAMS = oauth2Params;
+		startActivity(new Intent().setClass(this,MainScreen.class));
+	}
+	
+	/**
+	 * Starts the activity that takes care of the OAuth2 flow
+	 * 
+	 * @param oauth2Params
+	 */
+	private void startOauthFlow(Oauth2Params oauth2Params) {
+		Constants.OAUTH2PARAMS = oauth2Params;
+		startActivity(new Intent().setClass(this,OAuthAccessTokenActivity.class));
+	}	
+	
+	/**
+	 * Clears our credentials (token and token secret) from the shared preferences.
+	 * We also setup the authorizer (without the token).
+	 * After this, no more authorized API calls will be possible.
+	 * @throws IOException 
+	 */
+    private void clearCredentials(Oauth2Params oauth2Params)  {
+		try {
+			new OAuth2Helper(prefs,oauth2Params).clearCredentials();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
 	
 	@Override
 	protected void onResume() {
@@ -163,11 +192,11 @@ public class IntroScreen extends Activity {
 	}
 	
 	protected  void startTimer() {
-		System.out.println(" +++++ Started timer");
+		Log.i(Constants.TAG," +++++ Started timer");
 		timer = new Timer();
 	    timer.scheduleAtFixedRate(new TimerTask() {
 	        public void run() {
-	        	System.out.println(" +++++ running timer");
+	        	Log.i(Constants.TAG," +++++ Refreshing data");
 	        	try {
 		            Message msg = new Message();
 		            Bundle bundle = new Bundle();
@@ -175,7 +204,6 @@ public class IntroScreen extends Activity {
 		            bundle.putString("tasks", getTokenStatusText(Oauth2Params.GOOGLE_TASKS_OAUTH2));
 		            bundle.putString("foursquare", getTokenStatusText(Oauth2Params.FOURSQUARE_OAUTH2));
 		            msg.setData(bundle);
-					//mHandler.obtainMessage(1).sendToTarget();
 		            mHandler.sendMessage(msg);
 		            
 	        	} catch (Exception ex) {
@@ -211,21 +239,5 @@ public class IntroScreen extends Activity {
 	}
 	
 	private WeakRefHandler mHandler = new WeakRefHandler(this);
-
-		
-	
-	/**
-	 * Clears our credentials (token and token secret) from the shared preferences.
-	 * We also setup the authorizer (without the token).
-	 * After this, no more authorized API calls will be possible.
-	 * @throws IOException 
-	 */
-    private void clearCredentials(Oauth2Params oauth2Params)  {
-		try {
-			new OAuth2Helper(prefs,oauth2Params).clearCredentials();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
 
 }
