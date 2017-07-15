@@ -1,4 +1,4 @@
-##Introduction
+## Introduction
 
 The goal of this sample project is to show you how you can do OAuth2 from an Android application using the [Google OAuth Client Library for Java](https://code.google.com/p/google-oauth-java-client/).
 
@@ -8,14 +8,14 @@ The sample application allows you to access data from the following OAuth2 provi
 - Google Tasks  (using the Google OAuth Client Library for Java to access this Google API).
 - Google Plus (using Google APIs Client Library for Java, offering a higher level abstraction for interacting with Google APIs) 
 
-##Legacy github repo / blog post
+## Legacy github repo / blog post
 
 This repository has recently been updated to use a new version of the Google OAuth libraries, and now also includes the Foursquare flow.
 The original blog post for the original github repository can be found here : http://blog.doityourselfandroid.com/2011/08/06/oauth-2-0-flow-android/
 Note that some of the code samples in the article are now out-of-date due to the new version of the Google OAuth library.
 I'll write up a new blog post as soon as I can find the time.
 
-##Google projects for doing OAuth2
+## Google projects for doing OAuth2
 
 The sample application uses 3 projects from  the Google OAuth2 client library family. 
 
@@ -37,7 +37,7 @@ The Google Tasks sample included in the application for example doesn't use the 
 
 Although the Google APIs Client Library for Java primarily target Google APIs, they can also be used to interact with non-Google Oauth2 providers like Foursquare. 
 
-##Project setup
+## Project setup
 
 This project is built using the [m2e-android plugin](http://rgladwell.github.io/m2e-android/index.html) to handle its external dependencies.
 
